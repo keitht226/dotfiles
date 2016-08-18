@@ -10,3 +10,6 @@
 [submodule "vim/bundle/conqueterm-vim"]
 	path = vim/bundle/conqueterm-vim
 	url = https://github.com/pthrasher/conqueterm-vim.git
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
