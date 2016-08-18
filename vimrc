@@ -177,3 +177,8 @@ map <leader><F6> :SyntasticToggleMode<cr>
 "make it so easy motion only requires one key press of <leader>
 map <leader> <plug>(easymotion-prefix)
 
+"----------------------------------------------------------------------------------------- 
+" Conque Shell
+"----------------------------------------------------------------------------------------- 
+"start bash in split window
+map <leader>bash :20split<CR><C-w>j:ConqueTerm<CR>
