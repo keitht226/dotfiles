@@ -7,6 +7,6 @@
 [submodule "vim/bundle/vim-easymotion"]
 	path = vim/bundle/vim-easymotion
 	url = https://github.com/easymotion/vim-easymotion.git
-[submodule "vim/bundle/Conque-Shell"]
-	path = vim/bundle/Conque-Shell
-	url = https://github.com/vim-scripts/Conque-Shell.git
+[submodule "vim/bundle/conqueterm-vim"]
+	path = vim/bundle/conqueterm-vim
+	url = https://github.com/pthrasher/conqueterm-vim.git
