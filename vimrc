@@ -135,6 +135,41 @@ nnoremap k gk
 ":set guioptions-=r  "remove right-hand scroll bar
 ":set guioptions-=L  "remove left-hand scroll bar
 
+
+"----------------------------------------------------------------------------------------- 
+" Quick Fix
+" note: May remove conque shell plugin after getting better with this
+"----------------------------------------------------------------------------------------- 
+function! GetBufferList()
+  redir =>buflist
+  silent! ls!
+  redir END
+  return buflist
+endfunction
+
+function! ToggleList(bufname, pfx)
+  let buflist = GetBufferList()
+  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
+    if bufwinnr(bufnum) != -1
+      exec(a:pfx.'close')
+      return
+    endif
+  endfor
+  if a:pfx == 'l' && len(getloclist(0)) == 0
+      echohl ErrorMsg
+      echo "Location List is Empty."
+      return
+  endif
+  let winnr = winnr()
+  exec(a:pfx.'open')
+  if winnr() != winnr
+    wincmd p
+  endif
+endfunction
+
+nmap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
+nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
+
 "-----------------------------------------------------------------------------------------
 " Plugins
 "-----------------------------------------------------------------------------------------
@@ -179,6 +214,13 @@ map <leader> <plug>(easymotion-prefix)
 
 "----------------------------------------------------------------------------------------- 
 " Conque Shell
+" Note. May remove after learning quickfix
 "----------------------------------------------------------------------------------------- 
 "start bash in split window
-map <leader>bash :20split<CR><C-w>j:ConqueTerm<CR>
+map <leader>bash :30split<CR><C-w>j:ConqueTerm bash<CR>
+
+"----------------------------------------------------------------------------------------- 
+" Tagbar 
+" note: must have installed ctags
+"----------------------------------------------------------------------------------------- 
+nmap <F8> :TagbarToggle<CR>
