@@ -10,18 +10,21 @@ BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd )"
 in_array() { for e in "${@:2}"; do [[ "$e" = "$1" ]] && break; done; }
 
 ln_flags="-s"
+exists=false
 
-while getopts "f" OPTION; do
-  case "$OPTION" in
-    f)
-      ln_flags="${ln_flags}f"
-      force=1
-      ;;
-    *)
-      exit 1
-      ;; 
-  esac
+for file in "${FILES[@]}"
+do
+  path="$BASE_DIR/$file"
+  new_path="$HOME/.$file"
+  if [ -e $new_path ]; then
+    echo "$file already exists. Delete conflicting file and try again"
+    exists=true
+  fi
 done
+
+if [ $exists ]; then
+  exit 1
+fi
 
 for file in "${FILES[@]}"
 do
@@ -29,12 +32,9 @@ do
   path="$BASE_DIR/$file"
   new_path="$HOME/.$file"
 
-  if [[ -e $new_path ]] && [[ $force != 1 ]]; then
-    echo "File $file already exists. Save all desired files elswhere then try again with -f"
-  else
-    echo "Creating symlink for $file"
-    ln $ln_flags $path $new_path
-  fi
+  echo "Creating symlink for $file"
+  ln $ln_flags $path $new_path
+
 done
 
 git submodule init
