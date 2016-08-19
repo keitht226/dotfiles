@@ -2,7 +2,7 @@
 # Installs .vimrc, .bashrc, .vim, .fonts
 # will not overwrite unless -f option provided
 
-FILES=( '.vim' '.vimrc' '.bashrc' '.fonts' )
+FILES=( 'vim' 'vimrc' 'bashrc' 'fonts' )
 #grabs directory of this scripts
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
@@ -25,12 +25,14 @@ done
 
 for file in "${FILES[@]}"
 do
+
   path="$BASE_DIR/$file"
-  new_path="$HOME/$file"
+  new_path="$HOME/.$file"
+
   if [[ -e $new_path ]] && [[ $force != 1 ]]; then
     echo "File $file already exists. Save all desired files elswhere then try again with -f"
   else
-    echo "Creating symlink $new_path"
+    echo "Creating symlink for $file"
     ln $ln_flags $path $new_path
   fi
 done
