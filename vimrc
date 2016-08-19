@@ -1,4 +1,5 @@
 "run pathogen
+" comment line below to avoid all plugins
 execute pathogen#infect()                      
 
 set t_Co=256
@@ -224,3 +225,10 @@ map <leader>bash :30split<CR><C-w>j:ConqueTerm bash<CR>
 " note: must have installed ctags
 "----------------------------------------------------------------------------------------- 
 nmap <F8> :TagbarToggle<CR>
+
+"----------------------------------------------------------------------------------------- 
+" Indent Guides 
+" default keybind: <leader>ig
+"----------------------------------------------------------------------------------------- 
+let g:indent_guides_guide_size=1
+"let g:indent_guides_start_level=2
