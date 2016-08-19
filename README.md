@@ -22,4 +22,4 @@ git pull origin master
 ## Plugin info
 ### Pathogen
 * Required for any plugins to work
-* _Vim version: 7.0 or above_
+* __Vim version: 7.0 or above__
