@@ -139,4 +139,5 @@ fi
 
 #alias
 #alias 485_labs="cd ~/Documents/school/EcEn485/labs"
+alias gvim="DISPLAY=:0 gvim"
 

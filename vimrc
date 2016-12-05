@@ -181,9 +181,9 @@ nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
 "auto open NERDTree on startup
 "autocmd vimenter * NERDTree
 "start focus in other window
-autocmd vimenter * wincmd p
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd vimenter * wincmd p
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "exit vim if nerdtree is the last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 "open nerdtree in the pwd
