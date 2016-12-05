@@ -22,7 +22,7 @@ do
   fi
 done
 
-if [ $exists ]; then
+if [ $exists = true ]; then
   exit 1
 fi
 
