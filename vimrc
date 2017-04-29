@@ -87,7 +87,7 @@ set ttymouse=xterm2
 set foldmethod=marker
 
 "highlight current line
-set cursorline
+"set cursorline
 
 "Screen automatically scrolls with curser
 :set scrolloff=3
