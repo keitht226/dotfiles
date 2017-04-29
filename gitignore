@@ -1,0 +1,18 @@
+# Compiled Source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Temporary Files #
+###################
+*.swap
+*.swo
+*~
+
+#      Other      #
+###################
+*.log

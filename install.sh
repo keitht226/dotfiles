@@ -1,8 +1,10 @@
 #!/bin/bash
-# Installs .vimrc, .bashrc, .vim, .fonts
+# Places dotfiles in proper locations
 # will not overwrite unless -f option provided
 
-FILES=( 'vim' 'vimrc' 'bashrc' 'fonts' )
+FILES=( 'vim' 'vimrc' 'bashrc' 'fonts' 'dircolors' 'gitignore' 'gitconig'\
+'tmux.conf')
+
 #grabs directory of this scripts
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd )"
 

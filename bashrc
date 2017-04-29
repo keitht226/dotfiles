@@ -79,9 +79,20 @@ BMAG="\[\033[45m\]" # background magenta
 BCYN="\[\033[46m\]" # background cyan
 BWHT="\[\033[47m\]" # background white
 
+#256 ANSI color codes
+## gruvbox colors
+FGRUV_ORNG="\[\033[01;38;5;172m\]"
+FGRUV_CYN="\[\033[01;38;5;108m\]"
+FGRUV_BLUE="\[\033[01;38;5;73m\]"
+FGRUV_RED="\[\033[01;38;5;203m\]"
+FGRUV_WHT="\[\033[01;38;5;187m\]"
+FGRUV_GRN="\[\033[01;38;5;106m\]"
+
 if [ "$color_prompt" = yes ]; then
-  PS1="$HC$FCYN [ $FGRN${debian_chroot:+($debian_chroot)}\u$FCYN: $FGRN\w $FCYN]\\$ $RS"
-  PS2="$HC$FCYN&gt; $RS"
+  PS1="$HC$FGRUV_CYN [ $FGRUV_ORNG${debian_chroot:+($debian_chroot)}\u\
+$FGRUV_CYN: $FGRUV_ORNG\w $FGRUV_CYN]\\$ $RS"
+
+  PS2="$HC$FGRUV_GRN&gt; $RS"
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -140,4 +151,3 @@ fi
 #alias
 #alias 485_labs="cd ~/Documents/school/EcEn485/labs"
 alias gvim="DISPLAY=:0 gvim"
-
