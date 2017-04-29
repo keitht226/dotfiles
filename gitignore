@@ -10,6 +10,7 @@
 # Temporary Files #
 ###################
 *.swap
+*.swp
 *.swo
 *~
 
