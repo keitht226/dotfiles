@@ -20,7 +20,7 @@ do
   new_path="$HOME/.$file"
   if [ -e $new_path ]; then
     if [ $# -ne 0 ] && [ ${1} = "-f" ]; then
-      rm -r "${file}"
+      rm ~/."${file}"
     else
       echo "$file already exists."
       exists=true
