@@ -6,12 +6,16 @@ set t_Co=256
 
 syntax enable
 
-let g:gruvbox_contrast='hard'
 let g:zenburn_high_Contrast = 1
 "let g:zenburn_transparent = 1
 
+"GVIM settings ----------------------------------------------------------------
+let g:gruvbox_contrast_dark='hard' " light, medium, hard
+let g:gruvbox_contrast_light='hard'
+let g:gruvbox_invert_selection=0 " fixes visual mode highlight
+"------------------------------------------------------------------------------
+
 set background=dark
-let base16colorspace=256
 if has('gui_running')
   colorscheme gruvbox
 else

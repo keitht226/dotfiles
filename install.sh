@@ -19,12 +19,18 @@ do
   path="$BASE_DIR/$file"
   new_path="$HOME/.$file"
   if [ -e $new_path ]; then
-    echo "$file already exists. Delete conflicting file and try again"
-    exists=true
+    if [ $# -ne 0 ] && [ ${1} = "-f" ]; then
+      rm -r "${file}"
+    else
+      echo "$file already exists."
+      exists=true
+    fi
   fi
 done
 
 if [ $exists = true ]; then
+  printf "\nSave existing files under different name (<file>.original) if\n"
+  printf "desired, then run this script with -f option\n"
   exit 1
 fi
 
