@@ -93,7 +93,7 @@ set ttymouse=xterm2
 set foldmethod=marker
 
 "highlight current line
-"set cursorline
+set cursorline
 
 "Screen automatically scrolls with curser
 :set scrolloff=3
@@ -103,6 +103,13 @@ set lazyredraw
 
 "remap leader to ','
 let mapleader=","
+
+"shorcut for replacing word under cursor with yanked word without overwriting yank buffer
+nnoremap <leader>p ciw<C-r>0<ESC>
+
+"insert blank lines above/below
+nnoremap <leader>o o<esc>
+nnoremap <leader>O O<esc>
 
 "double click will highlight all occurences of word in either mode
 :map <2-LeftMouse> *
@@ -117,20 +124,6 @@ endif
 
 "remap no hlsearch to space
 nnoremap <leader><space> :nohlsearch<CR>
-
-"remap code division
-map <leader>- i-----------------------------------------------------------------------------------------<esc>0
-
-"shortcut for pasting yanked words without overwriting buffer
-nnoremap <leader>p ciw<C-r>0<ESC>
-
-"copy/paste to clipboard in gvim. May not work on all OS's
-nnoremap <leader>gy "+y
-nnoremap <leader>gp "+gP
-
-"insert blank line above/below
-nnoremap <leader>O O<esc>
-nnoremap <leader>o o<esc>
 
 "move vertically by visual line instead of line number
 nnoremap j gj
