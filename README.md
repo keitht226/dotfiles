@@ -22,10 +22,12 @@ git pull origin master
 ```
 ## General Notes
 ### Colors
-* 'ls' and vim colors are set to gruvbox
-    * looks best if terminal background color is changed appropriately
-        * Gruvbox background color (hard contrast): #1d2021 rgb(29,32,33)
-        * Gruvbox foreground color (dark) : #ebdbb2 rgb(235,219,178)
+* looks best if terminal background color is changed appropriately
+* Gruvbox background color (hard contrast): #1d2021 rgb(29,32,33)
+* Hybrid background colors:
+      * Hard Contrast: #1D1F21
+      * Soft Contrast: #232c31
+
 ### Pathogen
 * Required for any plugins to work
 * __Vim version: 7.0 or above__
