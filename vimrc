@@ -14,19 +14,21 @@ let g:gruvbox_contrast_dark='hard' " light, medium, hard
 let g:gruvbox_contrast_light='hard'
 let g:gruvbox_invert_selection=0 " fixes visual mode highlight
 "------------------------------------------------------------------------------
+"Molokai settings -------------------------------------------------------------
+let g:rehash256=1 " improves terminal colors
+let g:molokai_original=0 " changes background color
+"------------------------------------------------------------------------------
 
 set background=dark
 if has('gui_running')
-  colorscheme gruvbox
+  colorscheme molokai
 else
   "fixes gruvbox comment highlight issue
   let g:gruvbox_italic=0
-  "fixes molokai colors
-  let g:molokai_original=1
   "make line numbers a light grey that's easier to see
   autocmd! ColorScheme * highlight LineNr ctermfg=grey
   
-  colorscheme gruvbox
+  colorscheme molokai
 endif
 
 if has('gui_running')
