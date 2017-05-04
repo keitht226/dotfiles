@@ -21,14 +21,14 @@ let g:molokai_original=0 " changes background color
 
 set background=dark
 if has('gui_running')
-  colorscheme molokai
+  colorscheme hybrid
 else
   "fixes gruvbox comment highlight issue
   let g:gruvbox_italic=0
   "make line numbers a light grey that's easier to see
   autocmd! ColorScheme * highlight LineNr ctermfg=grey
   
-  colorscheme molokai
+  colorscheme hybrid
 endif
 
 if has('gui_running')
