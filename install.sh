@@ -2,7 +2,7 @@
 # Places dotfiles in proper locations
 # will not overwrite unless -f option provided
 
-FILES=( 'vim' 'vimrc' 'bashrc' 'fonts' 'dircolors' 'gitignore' 'gitconfig'\
+FILES=( 'vim' 'vimrc' 'bashrc' 'fonts' 'hybrid_dircolors' 'gitignore' 'gitconfig'\
  'tmux.conf' )
 
 #grabs directory of this scripts
