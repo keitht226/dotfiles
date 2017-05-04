@@ -89,13 +89,13 @@ FGRUV_WHT="\[\033[01;38;5;187m\]"
 FGRUV_GRN="\[\033[01;38;5;106m\]"
 
 ## Molokai Colors
-FGRUV_ORNG="\[\033[01;38;5;208m\]"
-FGRUV_CORAL="\[\033[01;38;5;222m\]"
-FGRUV_CYN="\[\033[01;38;5;81m\]"
-FGRUV_BLUE="\[\033[01;38;5;141m\]"
-FGRUV_RED="\[\033[01;38;5;197m\]"
-FGRUV_WHT="\[\033[01;38;5;252m\]"
-FGRUV_GRN="\[\033[01;38;5;154m\]"
+MOL_ORNG="\[\033[01;38;5;208m\]"
+MOL_CORAL="\[\033[01;38;5;222m\]"
+MOL_CYN="\[\033[01;38;5;81m\]"
+MOL_BLUE="\[\033[01;38;5;141m\]"
+MOL_RED="\[\033[01;38;5;197m\]"
+MOL_WHT="\[\033[01;38;5;252m\]"
+MOL_GRN="\[\033[01;38;5;154m\]"
 
 if [ "$color_prompt" = yes ]; then
   PS1="$HC$FGRUV_CYN [ $FGRUV_ORNG${debian_chroot:+($debian_chroot)}\u\
