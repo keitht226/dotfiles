@@ -18,12 +18,19 @@ setenv MOL_RED "%{\033[00;38;5;197m%}"
 setenv MOL_WHT "%{\033[00;38;5;252m%}"
 setenv MOL_GRN "%{\033[00;38;5;154m%}"
 
+# Hybrid foreground colors(256)
+setenv HYB_ORNG "%{\033[00;38;5;173m%}"
+setenv HYB_YELL "%{\033[00;38;5;221m%}"
+setenv HYB_CYN "%{\033[00;38;5;109m%}"
+setenv HYB_BLU "%{\033[00;38;5;110m%}"
+setenv HYB_PURP "%{\033[00;38;5;139m%}"
+setenv HYB_RED "%{\033[00;38;5;167m%}"
+setenv HYB_WHT "%{\033[00;38;5;250m%}"
+setenv HYB_GRN "%{\033[00;38;5;143m%}"
+
 # change prompt
-# Gruvbox Colors
-#alias setprompt 'set prompt="$FGRUV_ORNG$USER@`hostname`${FGRUV_CYN}: ${FGRUV_RED}${cwd}${FGRUV_CYN}>$FGRUV_WHT "'
-#setprompt
-# Molokai Colors
-alias setprompt 'set prompt="$MOL_ORNG$USER@`hostname`${MOL_GRN}: ${MOL_CYN}${cwd}${MOL_GRN}>$MOL_WHT "'
+# Hybrid Theme
+alias setprompt 'set prompt="$HYB_ORNG$USER@`hostname`${HYB_CYN}: ${HYB_RED}${cwd}${HYB_CYN}>$HYB_WHT "'
 setprompt
 alias cd 'chdir \!* && setprompt'
 
