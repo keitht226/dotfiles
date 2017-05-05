@@ -21,18 +21,19 @@ let g:molokai_original=0 " changes background color
 
 set background=dark
 if has('gui_running')
-  colorscheme hybrid
+  colorscheme keith_color
 else
   "fixes gruvbox comment highlight issue
   let g:gruvbox_italic=0
   "make line numbers a light grey that's easier to see
   autocmd! ColorScheme * highlight LineNr ctermfg=grey
   
-  colorscheme hybrid
+  colorscheme keith_color
 endif
 
 if has('gui_running')
-  set guifont=InputMono:h10:cANSI
+  "set guifont=InputMono:h12:cANSI
+  set guifont=Input\ Mono\ 12
 endif
 
 "treat tabs like other editors
@@ -189,3 +190,23 @@ nmap <F8> :TagbarToggle<CR>
 "----------------------------------------------------------------------------------------- 
 let g:indent_guides_guide_size=1
 "let g:indent_guides_start_level=2
+
+
+"----------------------------------------------------------------------------------------- 
+" Airline
+"----------------------------------------------------------------------------------------- 
+" airline is always open
+set laststatus=2
+" tabs automatically created when a new file is opened
+let g:airline#extensions#tabline#enabled=1
+" tabs will be visible, but can't be switch with gt gT like normal.
+" they are normal buffers, so :bn etc needs to be used
+
+"change default theme
+let g:airline_theme='simple'
+
+"----------------------------------------------------------------------------------------- 
+" youcompleteme
+"----------------------------------------------------------------------------------------- 
+" don't load youcompleteme
+let g:loaded_youcompleteme=1

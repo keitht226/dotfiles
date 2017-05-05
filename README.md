@@ -20,6 +20,14 @@ git submodule foreach git pull origin master
 ```
 git pull origin master 
 ```
+
+## Add new plugin submodule
+```git
+cd ~/.vim/bundle
+git submodule add \<path>
+git add .
+```
+
 ## General Notes
 ### Colors
 * looks best if terminal background color is changed appropriately
@@ -27,6 +35,10 @@ git pull origin master
 * Hybrid background colors:
       * Hard Contrast: #1D1F21
       * Soft Contrast: #232c31
+* Keith Background Color: #121212 rgb(18,18,18)
+* Useful sites
+    * [256 xterm codes](misc.flogisoft.com/bash/tip_colors_and_formatting)  
+    * [hex to xterm](https://github.com/97-109-107/vim_cterm2gui2cterm/blob/master/vim_cterm2gui2cterm.py)
 
 ### Pathogen
 * Required for any plugins to work

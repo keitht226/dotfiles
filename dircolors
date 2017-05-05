@@ -103,12 +103,12 @@ TERM xterm-termite
 
 ## Special files
 
-NORMAL 00;38;5;250 # no color code at all
-DIR 00;38;5;110 # directory 01;34
-OTHER_WRITABLE 00;38;5;110 # dir that is other-writable (o+w) and not sticky
-LINK 00;38;5;109 # symbolic link. (If you set this to 'target' instead of a
+NORMAL 00;38;5;252 # no color code at all
+DIR 00;38;5;69 # directory 01;34
+OTHER_WRITABLE 00;38;5;69 # dir that is other-writable (o+w) and not sticky
+LINK 00;38;5;81 # symbolic link. (If you set this to 'target' instead of a
  # numerical value, the color is as for the file pointed to.)
-EXEC 00;38;5;143 # executable
+EXEC 00;38;5;155 # executable
 
 RESET 0 # reset to "normal" color
 
@@ -120,15 +120,14 @@ DOOR 48;5;230;38;5;136;01 # door
 BLK 48;5;230;38;5;244;01 # block device driver
 CHR 48;5;230;38;5;244;01 # character device driver
 #ORPHAN 48;5;235;38;5;160 # symlink to nonexistent file, or non-stat'able file
-ORPHAN 00;38;5;160 # symlink to nonexistent file, or non-stat'able file
-SETUID 48;5;160;38;5;230 # file that is setuid (u+s)
-SETGID 48;5;136;38;5;230 # file that is setgid (g+s)
+ORPHAN 00;38;5;203 # symlink to nonexistent file, or non-stat'able file
+SETUID 48;5;124;38;5;230 # file that is setuid (u+s)
+SETGID 48;5;208;38;5;230 # file that is setgid (g+s)
 CAPABILITY 30;41 # file with capability
-STICKY_OTHER_WRITABLE 48;5;64;38;5;230 # dir that is sticky and other-writable (+t,o+w)
-STICKY 48;5;33;38;5;230 # dir with the sticky bit set (+t) and not other-writable
+STICKY_OTHER_WRITABLE 48;5;22;38;5;230 # dir that is sticky and other-writable (+t,o+w)
+STICKY 48;5;24;38;5;230 # dir with the sticky bit set (+t) and not other-writable
 
 ## Archives or compressed
-# Laster number should be 61 for gruvbox
 .tar    00;38;5;139
 .tgz    00;38;5;139
 .arj    00;38;5;139
@@ -162,34 +161,34 @@ STICKY 48;5;33;38;5;230 # dir with the sticky bit set (+t) and not other-writabl
 .gem    00;38;5;139
 
 # Image formats (yellow)
-.jpg    00;38;5;221
-.JPG    00;38;5;221 #stupid but needed
-.jpeg   00;38;5;221
-.gif    00;38;5;221
-.bmp    00;38;5;221
-.pbm    00;38;5;221
-.pgm    00;38;5;221
-.ppm    00;38;5;221
-.tga    00;38;5;221
-.xbm    00;38;5;221
-.xpm    00;38;5;221
-.tif    00;38;5;221
-.tiff   00;38;5;221
-.png    00;38;5;221
-.PNG    00;38;5;221
-.svg    00;38;5;221
-.svgz   00;38;5;221
-.mng    00;38;5;221
-.pcx    00;38;5;221
-.dl     00;38;5;221
-.xcf    00;38;5;221
-.xwd    00;38;5;221
-.yuv    00;38;5;221
-.cgm    00;38;5;221
-.emf    00;38;5;221
-.eps    00;38;5;221
-.CR2    00;38;5;221
-.ico    00;38;5;221
+.jpg    00;38;5;222
+.JPG    00;38;5;222 #stupid but needed
+.jpeg   00;38;5;222
+.gif    00;38;5;222
+.bmp    00;38;5;222
+.pbm    00;38;5;222
+.pgm    00;38;5;222
+.ppm    00;38;5;222
+.tga    00;38;5;222
+.xbm    00;38;5;222
+.xpm    00;38;5;222
+.tif    00;38;5;222
+.tiff   00;38;5;222
+.png    00;38;5;222
+.PNG    00;38;5;222
+.svg    00;38;5;222
+.svgz   00;38;5;222
+.mng    00;38;5;222
+.pcx    00;38;5;222
+.dl     00;38;5;222
+.xcf    00;38;5;222
+.xwd    00;38;5;222
+.yuv    00;38;5;222
+.cgm    00;38;5;222
+.emf    00;38;5;222
+.eps    00;38;5;222
+.CR2    00;38;5;222
+.ico    00;38;5;222
 
 # Files of special interest (base1)
 .tex             00;38;5;187
@@ -252,24 +251,24 @@ STICKY 48;5;33;38;5;230 # dir with the sticky bit set (+t) and not other-writabl
 .cache      00;38;5;240
 
 # Audio formats (orange)
-.aac    00;38;5;173
-.au     00;38;5;173
-.flac   00;38;5;173
-.mid    00;38;5;173
-.midi   00;38;5;173
-.mka    00;38;5;173
-.mp3    00;38;5;173
-.mpc    00;38;5;173
-.ogg    00;38;5;173
-.opus   00;38;5;173
-.ra     00;38;5;173
-.wav    00;38;5;173
-.m4a    00;38;5;173
+.aac    00;38;5;208
+.au     00;38;5;208
+.flac   00;38;5;208
+.mid    00;38;5;208
+.midi   00;38;5;208
+.mka    00;38;5;208
+.mp3    00;38;5;208
+.mpc    00;38;5;208
+.ogg    00;38;5;208
+.opus   00;38;5;208
+.ra     00;38;5;208
+.wav    00;38;5;208
+.m4a    00;38;5;208
 # http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
-.axa    00;38;5;173
-.oga    00;38;5;173
-.spx    00;38;5;173
-.xspf   00;38;5;173
+.axa    00;38;5;208
+.oga    00;38;5;208
+.spx    00;38;5;208
+.xspf   00;38;5;208
 
 # Video formats (as audio + bold)
 .mov    00;38;5;166

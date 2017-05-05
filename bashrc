@@ -107,11 +107,21 @@ HYB_RED="\[\033[01;38;5;167m\]"
 HYB_WHT="\[\033[01;38;5;250m\]"
 HYB_GRN="\[\033[01;38;5;143m\]"
 
-if [ "$color_prompt" = yes ]; then
-  PS1="$HC$FGRUV_CYN [ $FGRUV_ORNG${debian_chroot:+($debian_chroot)}\u\
-$FGRUV_CYN: $FGRUV_ORNG\w $FGRUV_CYN]\\$ $RS"
+## Keith Colors
+K_ORNG="\[\033[01;38;5;208m\]"
+K_CORAL="\[\033[01;38;5;222m\]"
+K_CYN="\[\033[01;38;5;81m\]"
+K_PURP="\[\033[01;38;5;141m\]"
+K_RED="\[\033[01;38;5;203m\]"
+K_WHT="\[\033[01;38;5;252m\]"
+K_GRN="\[\033[01;38;5;155m\]"
 
-  PS2="$HC$FGRUV_GRN&gt; $RS"
+
+if [ "$color_prompt" = yes ]; then
+  PS1="$HC$K_ORNG ${debian_chroot:+($debian_chroot)}\u\
+${K_CYN}: ${K_RED}\w${K_CYN}> $K_WHT"
+
+  PS2="$HC$K_GRN&gt; $RS"
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
