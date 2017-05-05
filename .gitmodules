@@ -34,9 +34,6 @@
 [submodule "vim/bundle/vim-airline-themes"]
 	path = vim/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes.git
-[submodule "vim/bundle/vim-instant-markdown"]
-	path = vim/bundle/vim-instant-markdown
-	url = https://github.com/suan/vim-instant-markdown.git
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
