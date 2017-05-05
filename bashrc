@@ -181,3 +181,5 @@ fi
 #alias 485_labs="cd ~/Documents/school/EcEn485/labs"
 alias gvim="DISPLAY=:0 gvim"
 alias retext="DISPLAY=:0 retext"
+
+export PATH=$PATH:/usr/bin
