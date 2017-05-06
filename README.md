@@ -22,10 +22,19 @@ git pull origin master
 ```
 
 ## Add new plugin submodule
-```git
+```
 cd ~/.vim/bundle
 git submodule add \<path>
 git add .
+```
+
+## Remove plugin submodule
+```
+git submodule deinit vim/bundle/<submodule>
+git rm vim/bundle/<submodule>
+rm -rf .git/modules/vim/bundle/<submodule>
+git commit -a -m "removed submodule"
+git push
 ```
 
 ## General Notes
