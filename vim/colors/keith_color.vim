@@ -98,7 +98,7 @@ hi StatusLineNC    guifg=#808080 guibg=#080808
 hi StorageClass    guifg=#ff8700               gui=italic
 hi Structure       guifg=#5fdfff
 hi Tag             guifg=#ff5f5f               gui=italic
-hi Title           guifg=#ff5f5f
+hi Title           guifg=#5fdfff
 hi Todo            guifg=#FFFFFF guibg=bg      gui=bold
 
 hi Typedef         guifg=#5fdfff
@@ -254,7 +254,7 @@ if &t_Co > 255
 
        hi Statement       ctermfg=203               cterm=bold
        hi Tag             ctermfg=203
-       hi Title           ctermfg=203
+       hi Title           ctermfg=81
        hi Visual                      ctermbg=238
 
        hi Comment         ctermfg=244

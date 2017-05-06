@@ -2,6 +2,11 @@
 " comment line below to avoid all plugins
 execute pathogen#infect()                      
 
+" set gvim default window size
+if has("gui_running")
+  set lines=30 columns=90
+endif
+
 set t_Co=256
 
 syntax enable
@@ -130,11 +135,34 @@ nnoremap <leader><space> :nohlsearch<CR>
 nnoremap j gj
 nnoremap k gk
 
+"prevent lag when leaving/entering insert mode
+set timeout timeoutlen=3000 ttimeoutlen=100
+
 "hide toolbars and sidebar
 ":set guioptions-=m  "remove menu bar
 ":set guioptions-=T  "remove toolbar
 ":set guioptions-=r  "remove right-hand scroll bar
 ":set guioptions-=L  "remove left-hand scroll bar
+
+" statusline
+" cf the default statusline: %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+" format markers:
+"   %< truncation point
+"   %n buffer number
+"   %f relative path to file
+"   %m modified flag [+] (modified), [-] (unmodifiable) or nothing
+"   %r readonly flag [RO]
+"   %y filetype [ruby]
+"   %= split point for left and right justification
+"   %-35. width specification
+"   %l current line number
+"   %L number of lines in buffer
+"   %c current column number
+"   %V current virtual column number (-n), if different from %c
+"   %P percentage through buffer
+"   %) end of width specification
+set laststatus=2
+set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 
 "-------------------------------------------------------------------------------
 " Plugins
@@ -191,17 +219,31 @@ nmap <F8> :TagbarToggle<CR>
 let g:indent_guides_guide_size=1
 "let g:indent_guides_start_level=2
 
+"-------------------------------------------------------------------------------
+" nerdcommenter
+"-------------------------------------------------------------------------------
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
 
 "-------------------------------------------------------------------------------
-" Airline
+" vim markdown
 "-------------------------------------------------------------------------------
-" airline is always open
-set laststatus=2
-" tabs automatically created when a new file is opened
-let g:airline#extensions#tabline#enabled=1
-" tabs will be visible, but can't be switch with gt gT like normal.
-" they are normal buffers, so :bn etc needs to be used
-
-"change default theme :AirlineTheme ^d to see all options
-let g:airline_theme='simple'
-
+let g:vim_markdown_folding_disabled=1
