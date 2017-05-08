@@ -3,12 +3,12 @@ set autolist
 
 setenv K_ORNG "%{\033[00;38;5;208m%}"
 setenv K_CORAL "%{\033[00;38;5;222m%}"
-setenv K_CYN "%{\033[00;38;5;81%}"
-setenv K_BLU "%{\033[00;38;5;69%}"
-setenv K_PURP "%{\033[00;38;5;141%}"
-setenv K_RED "%{\033[00;38;5;203%}"
+setenv K_CYN "%{\033[00;38;5;81m%}"
+setenv K_BLU "%{\033[00;38;5;69m%}"
+setenv K_PURP "%{\033[00;38;5;141m%}"
+setenv K_RED "%{\033[00;38;5;203m%}"
 setenv K_WHT "%{\033[00;38;5;252m%}"
-setenv K_GRN "%{\033[00;38;5;155%}"
+setenv K_GRN "%{\033[00;38;5;155m%}"
 
 # change prompt
 # Hybrid Theme
