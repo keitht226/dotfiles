@@ -1,7 +1,7 @@
 # tab completion lists possible file
 set autolist
 
-setenv K_ORNG "%{\033[00;38;5;173m%}"
+setenv K_ORNG "%{\033[00;38;5;208m%}"
 setenv K_CORAL "%{\033[00;38;5;222m%}"
 setenv K_CYN "%{\033[00;38;5;81%}"
 setenv K_BLU "%{\033[00;38;5;69%}"
