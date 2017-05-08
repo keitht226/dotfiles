@@ -104,7 +104,7 @@ TERM xterm-termite
 ## Special files
 
 NORMAL 00;38;5;252 # no color code at all
-DIR 00;38;5;69 # directory 01;34
+DIR 00;38;5;75 # directory 01;34
 OTHER_WRITABLE 00;38;5;69 # dir that is other-writable (o+w) and not sticky
 LINK 00;38;5;81 # symbolic link. (If you set this to 'target' instead of a
  # numerical value, the color is as for the file pointed to.)
