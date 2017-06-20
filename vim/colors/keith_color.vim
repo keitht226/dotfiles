@@ -1,18 +1,15 @@
 " Vim color file
 "
-" Author: Tomas Restrepo <tomas@winterdom.com>
+" Author: Keith Thompson - based on
+" Tomas Restrepo <tomas@winterdom.com>
 " https://github.com/tomasr/molokai
 "
-" Note: Based on the Monokai theme for TextMate
-" by Wimer Hazenberg and its darker variant
-" by Hamish Stuart Macpherson
-"
+" Note: 
+" 
 
 hi clear
 
 if version > 580
-    " no guarantees for version 5.8 and below, but this makes it stop
-    " complaining
     hi clear
     if exists("syntax_on")
         syntax reset
@@ -50,7 +47,7 @@ hi DiffText        guifg=#ffdfdf guibg=#005f87 gui=italic,bold
 
 hi Directory       guifg=#5f87ff               gui=bold
 hi Error           guifg=#ffafff guibg=#87005f
-hi ErrorMsg        guifg=#ff00af guibg=#000000 gui=bold
+hi ErrorMsg        guifg=#ff5f5f guibg=#121212 gui=bold
 hi Exception       guifg=#afff5f               gui=bold
 hi Float           guifg=#af87ff
 hi FoldColumn      guifg=#5f87af guibg=#000000
@@ -58,14 +55,14 @@ hi Folded          guifg=#5f87af guibg=#000000
 hi Function        guifg=#afff5f
 hi Identifier      guifg=#ff8700
 hi Ignore          guifg=#808080 guibg=bg
-hi IncSearch       guifg=#C4BE89 guibg=#000000
+hi IncSearch       guifg=#ffdf87 guibg=#000000
 
 hi Keyword         guifg=#ff5f5f               gui=bold
 hi Label           guifg=#ffdf87               gui=none
 hi Macro           guifg=#afff5f               gui=italic
 hi SpecialKey      guifg=#66D9EF               gui=italic
 
-hi MatchParen      guifg=#000000 guibg=#ff8700 gui=bold
+hi MatchParen      guifg=#ff8700 guibg=#303030 gui=bold
 hi ModeMsg         guifg=#ffdf87
 hi MoreMsg         guifg=#ffdf87
 hi Operator        guifg=#ff5f5f
@@ -108,7 +105,7 @@ hi Underlined      guifg=#808080               gui=underline
 hi VertSplit       guifg=#808080 guibg=#080808 gui=bold
 hi VisualNOS                     guibg=#403D3D
 hi Visual                        guibg=#403D3D
-hi WarningMsg      guifg=#FFFFFF guibg=#333333 gui=bold
+hi WarningMsg      guifg=#ff8700 guibg=#121212 gui=bold
 hi WildMenu        guifg=#5fdfff guibg=#000000
 
 hi Normal          guifg=#d0d0d0 guibg=#121212
@@ -125,21 +122,6 @@ hi SpecialKey      guifg=#4e4e4e
 " Support for 256-color terminal
 "
 if &t_Co > 255
-   if s:molokai_original == 1
-      hi Normal                   ctermbg=234
-      hi CursorLine               ctermbg=235   cterm=none
-      hi CursorLineNr ctermfg=208               cterm=none
-   else
-      hi Normal       ctermfg=252 ctermbg=233
-      hi CursorLine               ctermbg=234   cterm=none
-      hi CursorLineNr ctermfg=208               cterm=none
-   endif
-   "hi Boolean         ctermfg=135
-   "hi Character       ctermfg=144
-   " hi Number          ctermfg=135
-   " hi String          ctermfg=144
-   "hi Conditional     ctermfg=203               cterm=bold
-   "hi Constant        ctermfg=141               cterm=bold
    hi Cursor          ctermfg=16  ctermbg=253
    hi Debug           ctermfg=225               cterm=bold
    hi Define          ctermfg=81
@@ -150,27 +132,19 @@ if &t_Co > 255
    hi DiffDelete      ctermfg=224 ctermbg=124
    hi DiffText        ctermfg=224 ctermbg=24    cterm=bold
 
-   "hi Directory       ctermfg=155               cterm=bold
-   "hi Error           ctermfg=219 ctermbg=89
-   hi ErrorMsg        ctermfg=199 ctermbg=16    cterm=bold
-   "hi Exception       ctermfg=155               cterm=bold
-   "hi Float           ctermfg=141
+   hi ErrorMsg        ctermfg=203 ctermbg=233    cterm=bold
    hi FoldColumn      ctermfg=67  ctermbg=16
    hi Folded          ctermfg=67  ctermbg=16
-   "hi Function        ctermfg=155
-   "hi Identifier      ctermfg=208               cterm=none
    hi Ignore          ctermfg=244 ctermbg=232
-   hi IncSearch       ctermfg=193 ctermbg=16
+   hi IncSearch       ctermfg=222 ctermbg=0
 
    hi keyword         ctermfg=203               cterm=bold
    hi Label           ctermfg=222               cterm=none
    hi Macro           ctermfg=155
-   "hi SpecialKey      ctermfg=81
 
-   hi MatchParen      ctermfg=233  ctermbg=208 cterm=bold
+   hi MatchParen      ctermfg=208  ctermbg=236 cterm=bold
    hi ModeMsg         ctermfg=222
    hi MoreMsg         ctermfg=222
-   "hi Operator        ctermfg=161
 
    " complete menu
    hi Pmenu           ctermfg=81  ctermbg=16
@@ -178,10 +152,7 @@ if &t_Co > 255
    hi PmenuSbar                   ctermbg=232
    hi PmenuThumb      ctermfg=81
 
-   "hi PreCondit       ctermfg=118               cterm=bold
-   "hi PreProc         ctermfg=118
    hi Question        ctermfg=81
-   "hi Repeat          ctermfg=161               cterm=bold
    hi Search          ctermfg=0   ctermbg=222   cterm=NONE
 
    " marks column
@@ -195,13 +166,10 @@ if &t_Co > 255
        hi SpellLocal              ctermbg=17
        hi SpellRare  ctermfg=none ctermbg=none  cterm=reverse
    endif
-   "hi Statement       ctermfg=161               cterm=bold
    hi StatusLine      ctermfg=238 ctermbg=253
    hi StatusLineNC    ctermfg=244 ctermbg=235
    hi StorageClass    ctermfg=208
    hi Structure       ctermfg=81
-   "hi Tag             ctermfg=161
-   "hi Title           ctermfg=166
    hi Todo            ctermfg=231 ctermbg=232   cterm=bold
 
    hi Typedef         ctermfg=81
@@ -210,17 +178,11 @@ if &t_Co > 255
 
    hi VertSplit       ctermfg=244 ctermbg=232   cterm=bold
    hi VisualNOS                   ctermbg=238
-   "hi Visual                      ctermbg=235
-   hi WarningMsg      ctermfg=231 ctermbg=238   cterm=bold
+   hi WarningMsg      ctermfg=208 ctermbg=233   cterm=bold
    hi WildMenu        ctermfg=81  ctermbg=16
 
-   "hi Comment         ctermfg=59
    hi CursorColumn                ctermbg=236
    hi ColorColumn                 ctermbg=236
-   "hi LineNr          ctermfg=250 ctermbg=236
-   "hi NonText         ctermfg=59
-
-   "hi SpecialKey      ctermfg=59
 
    if exists("g:rehash256") && g:rehash256 == 1
        hi Normal       ctermfg=252 ctermbg=233
@@ -264,7 +226,4 @@ if &t_Co > 255
    endif
 end
 
-" Must be at the end, because of ctermbg=234 bug.
-" https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
 set background=dark
-
