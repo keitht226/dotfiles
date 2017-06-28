@@ -4,7 +4,7 @@
 
 ```
 mkdir ~/dotfiles && cd dotfiles
-git clone https://github.com/keitht226/dotfiles.git .
+git clone --recursive https://github.com/keitht226/dotfiles.git .
 bash install.sh
 ```
 * `bash install.sh -f` will overwrite existing dotfiles. Save them before running this command or they will be destroyed.
