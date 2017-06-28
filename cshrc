@@ -24,3 +24,6 @@ if (-x /usr/bin/dircolors) then
     eval `dircolors -c`
   endif
 endif
+
+setenv GREP_COLORS 'ms=01;38;5;222:mc=01;38;5;222:fn=1;38;5;141:se=01;38;5:81'
+alias grep 'grep --color=auto'
