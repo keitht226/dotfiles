@@ -184,4 +184,4 @@ fi
 
 export DISPLAY=:0
 export PATH=$PATH:/usr/bin
-export GREP_COLORS='ms=01;38;5;155:mc=01;38;5;155:fn=01;38;5;141:se=01;38;5;81'
+export GREP_COLORS='ms=01;38;5;222:mc=01;38;5;222:fn=01;38;5;141:se=01;38;5;81'
