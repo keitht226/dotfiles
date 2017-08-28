@@ -164,6 +164,8 @@ set timeout timeoutlen=3000 ttimeoutlen=100
 set laststatus=2
 set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 
+:nnoremap <F4> :buffers<CR>:buffer<Space>
+
 "-------------------------------------------------------------------------------
 " Plugins
 "-------------------------------------------------------------------------------
