@@ -185,6 +185,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 autocmd BufEnter * if &ft !~ '^nerdtree$' | silent! lcd %:p:h | endif
 "map nerdTree to ctrl-n
 map <C-n> :NERDTreeToggle<CR>
+"on older systems the following is needed
+"let g:NERDTreeDirArrow=0
+"let g:NERDTreeDirArrowExpandable="+"
+"let g:NERDTreeDirArrowCollapsible="~"
 
 "-------------------------------------------------------------------------------
 " Syntastic 
