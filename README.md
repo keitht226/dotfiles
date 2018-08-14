@@ -44,7 +44,8 @@ git push
 * Hybrid background colors:
       * Hard Contrast: #1D1F21
       * Soft Contrast: #232c31
-* Keith Background Color: #121212 rgb(18,18,18)
+* Keith Background Color: #121212 ctermbg=233
+* Keith Foreground Color: #d0d0d0 ctermfg=252
 * Useful sites
     * 256 xterm codes misc.flogisoft.com/bash/tip_colors_and_formatting  
     * hex to xterm https://github.com/97-109-107/vim_cterm2gui2cterm/blob/master/vim_cterm2gui2cterm.py
