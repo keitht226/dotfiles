@@ -8,6 +8,10 @@ if has("gui_running")
 endif
 
 set t_Co=256
+" prevents background from changing on low color terminals
+if &term =~ '256color'
+  set t_ut=
+endif
 
 syntax enable
 
