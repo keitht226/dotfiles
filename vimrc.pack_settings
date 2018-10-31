@@ -1,0 +1,99 @@
+nnoremap <F3> :call minpac#update()<CR>
+
+" Easy Motion ----------------------------------------------------------------
+"make it so easy motion only requires one key press of <leader>
+map <leader> <plug>(easymotion-prefix)
+
+" NERD Tree ------------------------------------------------------------------
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"open nerdtree in the pwd
+"autocmd BufEnter * if &ft !~ '^nerdtree$' | silent! lcd %:p:h | endif
+"map nerdTree to ctrl-n
+map <C-n> :NERDTreeToggle<CR>
+
+"on older systems the following is needed
+"let g:NERDTreeDirArrow=0
+"let g:NERDTreeDirArrowExpandable="+"
+"let g:NERDTreeDirArrowCollapsible="~"
+
+" IndentLine -----------------------------------------------------------------
+let g:indentLine_char = '¦'
+let g:indentLine_enabled = 1
+let g:indentLine_leadingSpaceChar = '·'
+let g:indentLine_leadingSpaceEnabled = 0
+
+" Airline --------------------------------------------------------------------
+" Note: Symbols won't appear correctly without compatible font
+let g:airline#extensions#tabline#enabled   = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#ale#enabled       = 1
+
+" CTRL P ---------------------------------------------------------------------
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
+" NERD Commenter--------------------------------------------------------------
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' }, 
+                            \'vim': { 'left': '"'} 
+                            \}
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" ALE (linter) ---------------------------------------------------------------
+nnoremap <F5> :ALEToggle<CR>
+" don't lint when a new file is opened
+let g:ale_lint_on_enter = 0
+" only lint when saving the file
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_save = 1
+" navigate between errors easier
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" set height of error list (default 10)
+let g:ale_list_window_size = 10
+
+" Signature ------------------------------------------------------------------
+" Colors the mark the same as the git gutter symbol it replaces
+let g:SignatureMarkTextHLDynamic = 1
+
+" Vim Markdown ---------------------------------------------------------------
+let g:vim_markdown_folding_disabled = 1
+
+" CPP Enhanced ---------------------------------------------------------------
+let g:cpp_no_function_highlight = 1
+
+" mu complete ----------------------------------------------------------------
+set completeopt+=menuone
+set completeopt+=noselect " enable auto completion
+let g:mucomplete#enable_auto_at_startup = 1
+set belloff+=ctrlg " disable bell
+set shortmess+=c   " shut off completion messages
+" let g:mucomplete#completion_delay = 1 " add delay before auto complete
+
+" tagbar ---------------------------------------------------------------------
+nmap <F8> :TagbarToggle<CR>
+
+" easy align -----------------------------------------------------------------
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)

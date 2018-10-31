@@ -1,0 +1,86 @@
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip    " Unix
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe " Windows
+set hidden                                  " treat tabs like other editors
+set nu                                      " show line numbers
+set showcmd                                 " show multiple commands in command line
+set whichwrap=b,s,h,l,<,>,~,[,]             " everything wraps
+set mouse=a                                 " allow use of mouse
+set ttymouse=xterm2                         " Enable mouse for xterm
+set incsearch                               " incremental search
+set ruler                                   " show current position
+set showcmd                                 " show matching brackets
+set cursorline                              " highlight current line
+set scrolloff=3                             " Screen automatically scrolls with curser
+set lazyredraw                              " redraw only when needed
+set timeout timeoutlen=3000 ttimeoutlen=100 " prevent lag when leaving/entering insert mode
+
+" get out of vi-compatible mode and don't use local .vimrc
+set noexrc
+set nocompatible
+
+"filetype specific indenting and syntax coloring
+filetype indent plugin on
+syntax on
+
+"highlight search and search isn't case-sensitive unless caps
+set hlsearch
+set ignorecase
+set smartcase
+
+"back space is more intuitive
+set backspace=indent,eol,start
+set autoindent
+set confirm "asks for confirmation instead of giving error
+
+"change length of tabs
+set shiftwidth=2
+set softtabstop=2
+
+"no real tabs(spaces instead)
+set expandtab
+set smarttab
+
+"Folding
+set foldmethod=manual
+" Save Folds When exit buffer
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent loadview
+augroup END
+
+" toggle set paste (prevents auto indent when pasting from clip-board
+set pastetoggle=<F2>
+set noshowmode
+
+"-----------------------------------------------------------------------------
+" Remaps settings 
+"-----------------------------------------------------------------------------
+"shorcut for replacing word under cursor with yanked word without overwriting yank buffer
+nnoremap <leader>p ciw<C-r>0<ESC>
+
+"insert blank lines above/below
+nnoremap <leader>o o<esc>
+nnoremap <leader>O O<esc>
+
+"double click will highlight all occurences of word in either mode
+map <2-LeftMouse> *N
+imap <2-LeftMouse> <c-o>*N
+
+"place vertical bar after certain amount of characters
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
+"remap no hlsearch to space
+nnoremap <leader><space> :nohlsearch<CR>
+
+"move vertically by visual line instead of line number
+nnoremap j gj
+nnoremap k gk
+
+" List buffers in a new window
+nnoremap <F4> :buffers<CR>:buffer<Space>
+

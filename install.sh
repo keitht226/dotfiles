@@ -3,7 +3,7 @@
 # will not overwrite unless -f option provided
 
 FILES=( 'vim' 'vimrc' 'bashrc' 'cshrc' 'fonts' 'dircolors' 'gitignore' 'gitconfig'\
- 'tmux.conf' )
+ 'tmux.conf' 'vimrc.general_settings' 'vimrc.pack_settings' )
 
 #grabs directory of this scripts
 BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd )"
