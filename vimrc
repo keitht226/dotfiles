@@ -32,9 +32,6 @@ if exists('*minpac#init')
   call minpac#add('https://github.com/jiangmiao/auto-pairs.git')
   call minpac#add('https://github.com/junegunn/vim-easy-align.git')
 
-  " load plugins
-  packloadall
-
   "-----------------------------------------------------------------------------
   " plugin settings 
   "-----------------------------------------------------------------------------
