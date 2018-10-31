@@ -1,7 +1,7 @@
 "remap leader to ','
 let mapleader=","
 
-set packpath^=~/.vim
+"set packpath^=~/.vim
 " try to load minpac. Use :call minpac#update() to update or install plugins
 packadd minpac
 if exists('*minpac#init')
