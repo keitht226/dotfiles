@@ -37,7 +37,7 @@ if exists('*minpac#init')
   "-----------------------------------------------------------------------------
   " plugin settings 
   "-----------------------------------------------------------------------------
-  source .vimrc.pack_settings
+  source ~/.vimrc.pack_settings
 
 endif
 

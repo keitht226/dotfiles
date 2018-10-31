@@ -43,11 +43,11 @@ set smarttab
 "Folding
 set foldmethod=manual
 " Save Folds When exit buffer
-augroup AutoSaveFolds
-  autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent loadview
-augroup END
+" augroup AutoSaveFolds
+  " autocmd!
+  " autocmd BufWinLeave * mkview
+  " autocmd BufWinEnter * silent loadview
+" augroup END
 
 " toggle set paste (prevents auto indent when pasting from clip-board
 set pastetoggle=<F2>
