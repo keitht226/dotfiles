@@ -44,3 +44,6 @@ do
   ln $ln_flags $path $new_path
 
 done
+
+git submodule init
+git submodule update
