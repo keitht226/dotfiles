@@ -7,7 +7,7 @@ packadd minpac
 if exists('*minpac#init')
   call minpac#init()
   " minpac must have {'type': 'opt'} so that it can be laoded with packadd
-  call minpac#add('k-takata/minpac', {'type': 'opt'})
+  call minpac#add('https://github.com/k-takata/minpac.git', {'type': 'opt'})
 
   "-----------------------------------------------------------------------------
   " additional plugins here
@@ -33,6 +33,9 @@ if exists('*minpac#init')
   call minpac#add('https://github.com/junegunn/fzf.vim.git')
   call minpac#add('https://github.com/jiangmiao/auto-pairs.git')
   call minpac#add('https://github.com/junegunn/vim-easy-align.git')
+
+  " load plugins
+  packloadall
 
   "-----------------------------------------------------------------------------
   " plugin settings 
