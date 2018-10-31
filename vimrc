@@ -31,6 +31,7 @@ if exists('*minpac#init')
   call minpac#add('https://github.com/junegunn/fzf.vim.git')
   call minpac#add('https://github.com/jiangmiao/auto-pairs.git')
   call minpac#add('https://github.com/junegunn/vim-easy-align.git')
+  call minpac#add('https://github.com/morhetz/gruvbox.git')
 
   "-----------------------------------------------------------------------------
   " plugin settings 
@@ -47,27 +48,23 @@ if has("gui_running")
   set lines=30 columns=90
 endif
 
-set t_Co=256
-" prevents background from changing on low color terminals
-if &term =~ '256color'
-  set t_ut=
-endif
-
 syntax enable
 
-"gruvbox settings ----------------------------------------------------------------
+"gruvbox settings --------------------------------------------------------------
 let g:gruvbox_contrast_dark='hard' " light, medium, hard
 let g:gruvbox_contrast_light='hard'
 let g:gruvbox_invert_selection=0 " fixes visual mode highlight
-"keith color settings -------------------------------------------------------------
-let g:rehash256=1 " improves terminal colors
-let g:molokai_original=0 " changes background color
 
 set background=dark
 if has('gui_running')
   colorscheme gruvbox
 else
-  "fixes gruvbox comment highlight issue
+  set t_Co=256
+  " prevents background from changing on low color terminals
+  if &term =~ '256color'
+    set t_ut=
+  endif
+
   let g:gruvbox_italic=0
   "make line numbers a light grey that's easier to see
   autocmd! ColorScheme * highlight LineNr ctermfg=grey
