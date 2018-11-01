@@ -81,14 +81,14 @@ BWHT="\[\033[47m\]" # background white
 
 #256 ANSI color codes
 ## gruvbox colors
-GRUV_ORNG="\[\033[01;38;5;166m\]"
-GRUV_YLW="\[\033[01;38;5;172m\]"
-GRUV_CYN="\[\033[01;38;5;72m\]"
-GRUV_BLUE="\[\033[01;38;5;66m\]"
-GRUV_RED="\[\033[01;38;5;124m\]"
+GRUV_ORNG="\[\033[01;38;5;208m\]"
+GRUV_YLW="\[\033[01;38;5;213m\]"
+GRUV_CYN="\[\033[01;38;5;108m\]"
+GRUV_BLUE="\[\033[01;38;5;109m\]"
+GRUV_RED="\[\033[01;38;5;167m\]"
 GRUV_WHT="\[\033[01;38;5;223m\]"
-GRUV_GRN="\[\033[01;38;5;106m\]"
-GRUV_PRP="\[\033[01;38;5;132m\]"
+GRUV_GRN="\[\033[01;38;5;142m\]"
+GRUV_PRP="\[\033[01;38;5;175m\]"
 
 ## Molokai Colors
 MOL_ORNG="\[\033[01;38;5;208m\]"
@@ -130,7 +130,7 @@ fi
 unset color_prompt force_color_prompt
 
 # Set Grep Colors to gruvbox theme
-export GREP_COLORS='ms=01;38;5;172:mc=01;38;5;66:fn=01;38;5;132:se=01;38;5;66:ln=01;38;5;106'
+export GREP_COLORS='ms=01;38;5;213:mc=01;38;5;108:fn=01;38;5;175:se=01;38;5;108:ln=01;38;5;142'
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
