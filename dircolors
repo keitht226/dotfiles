@@ -97,13 +97,13 @@ TERM xterm-termite
 NORMAL 00;38;5;223 # no color code at all
 #FILE 00 # regular file: use no color at all
 RESET 0 # reset to "normal" color
-DIR 00;38;5;4 # directory 01;34
-LINK 00;38;5;12 # symbolic link. (If you set this to 'target' instead of a
+DIR 00;38;5;66 # directory 01;34
+LINK 00;38;5;109 # symbolic link. (If you set this to 'target' instead of a
  # numerical value, the color is as for the file pointed to.)
 MULTIHARDLINK 00 # regular file with more than one link
-FIFO 48;5;214;38;5;166;01 # pipe
-SOCK 48;5;214;38;5;166;01 # socket
-DOOR 48;5;214;38;5;166;01 # door
+FIFO 48;5;214;38;5;167;01 # pipe
+SOCK 48;5;214;38;5;167;01 # socket
+DOOR 48;5;214;38;5;167;01 # door
 BLK 48;5;214;38;5;245;01 # block device driver
 CHR 48;5;214;38;5;245;01 # character device driver
 ORPHAN 38;5;167 # symlink to nonexistent file, or non-stat'able file
@@ -114,9 +114,9 @@ STICKY_OTHER_WRITABLE 48;5;64;38;5;230 # dir that is sticky and other-writable (
 OTHER_WRITABLE 48;5;235;38;5;33 # dir that is other-writable (o+w) and not sticky
 STICKY 48;5;33;38;5;230 # dir with the sticky bit set (+t) and not other-writable
 # This is for files with execute permission:
-EXEC 00;38;5;64
+EXEC 00;38;5;142
 
-## Archives or compressed (violet + bold for compression)
+## Archives or compressed (violet)
 .tar    00;38;5;132
 .tgz    00;38;5;132
 .arj    00;38;5;132
@@ -179,44 +179,44 @@ EXEC 00;38;5;64
 .CR2    00;38;5;214
 .ico    00;38;5;214
 
-# Files of special interest (base1)
-.tex             00;38;5;250
-.rdf             00;38;5;250
-.owl             00;38;5;250
-.n3              00;38;5;250
-.ttl             00;38;5;250
-.nt              00;38;5;250
-.torrent         00;38;5;250
-.xml             00;38;5;250
-*Makefile        00;38;5;250
-*Rakefile        00;38;5;250
-*Dockerfile      00;38;5;250
-*build.xml       00;38;5;250
-*rc              00;38;5;250
-*1               00;38;5;250
-.nfo             00;38;5;250
-*README          00;38;5;250
-*README.txt      00;38;5;250
-*readme.txt      00;38;5;250
-.md              00;38;5;250
-*README.markdown 00;38;5;250
-.ini             00;38;5;250
-.yml             00;38;5;250
-.cfg             00;38;5;250
-.conf            00;38;5;250
-.h               00;38;5;250
-.hpp             00;38;5;250
-.c               00;38;5;250
-.cpp             00;38;5;250
-.cxx             00;38;5;250
-.cc              00;38;5;250
-.objc            00;38;5;250
-.sqlite          00;38;5;250
-.go              00;38;5;250
-.sql             00;38;5;250
-.csv             00;38;5;250
+# Files of special interest (brighter)
+.tex             00;38;5;229
+.rdf             00;38;5;229
+.owl             00;38;5;229
+.n3              00;38;5;229
+.ttl             00;38;5;229
+.nt              00;38;5;229
+.torrent         00;38;5;229
+.xml             00;38;5;229
+*Makefile        00;38;5;229
+*Rakefile        00;38;5;229
+*Dockerfile      00;38;5;229
+*build.xml       00;38;5;229
+*rc              00;38;5;229
+*1               00;38;5;229
+.nfo             00;38;5;229
+*README          00;38;5;229
+*README.txt      00;38;5;229
+*readme.txt      00;38;5;229
+.md              00;38;5;229
+*README.markdown 00;38;5;229
+.ini             00;38;5;229
+.yml             00;38;5;229
+.cfg             00;38;5;229
+.conf            00;38;5;229
+.h               00;38;5;229
+.hpp             00;38;5;229
+.c               00;38;5;229
+.cpp             00;38;5;229
+.cxx             00;38;5;229
+.cc              00;38;5;229
+.objc            00;38;5;229
+.sqlite          00;38;5;229
+.go              00;38;5;229
+.sql             00;38;5;229
+.csv             00;38;5;229
 
-# "unimportant" files as logs and backups (base01)
+# "unimportant" files as logs and backups (darker)
 .log        00;38;5;246
 .bak        00;38;5;246
 .aux        00;38;5;246
@@ -259,7 +259,7 @@ EXEC 00;38;5;64
 .spx    00;38;5;208
 .xspf   00;38;5;208
 
-# Video formats (as audio + bold)
+# Video formats (same as audio)
 .mov    00;38;5;208
 .MOV    00;38;5;208
 .mpg    00;38;5;208
