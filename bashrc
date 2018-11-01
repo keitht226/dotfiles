@@ -130,7 +130,7 @@ fi
 unset color_prompt force_color_prompt
 
 # Set Grep Colors to gruvbox theme
-export GREP_COLORS='ms=01;38;5;214:mc=01;38;5;108:fn=01;38;5;175:se=01;38;5;108:ln=01;38;5;142'
+export GREP_COLORS='ms=01;38;5;175:mc=01;38;5;214:fn=01;38;5;109:se=01;38;5;214:ln=01;38;5;142'
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
