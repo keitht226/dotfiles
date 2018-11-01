@@ -97,8 +97,8 @@ TERM xterm-termite
 NORMAL 00;38;5;223 # no color code at all
 #FILE 00 # regular file: use no color at all
 RESET 0 # reset to "normal" color
-DIR 00;38;5;66 # directory 01;34
-LINK 00;38;5;109 # symbolic link. (If you set this to 'target' instead of a
+DIR 00;38;5;109 # directory 01;34
+LINK 00;38;5;108 # symbolic link. (If you set this to 'target' instead of a
  # numerical value, the color is as for the file pointed to.)
 MULTIHARDLINK 00 # regular file with more than one link
 FIFO 48;5;214;38;5;167;01 # pipe
@@ -111,43 +111,43 @@ SETUID 48;5;160;38;5;223 # file that is setuid (u+s)
 SETGID 48;5;136;38;5;223 # file that is setgid (g+s)
 CAPABILITY 30;41 # file with capability
 STICKY_OTHER_WRITABLE 48;5;106;38;5;223 # dir that is sticky and other-writable (+t,o+w)
-OTHER_WRITABLE 48;5;235;38;5;66 # dir that is other-writable (o+w) and not sticky
+OTHER_WRITABLE 48;5;235;38;5;109 # dir that is other-writable (o+w) and not sticky
 STICKY 48;5;66;38;5;223 # dir with the sticky bit set (+t) and not other-writable
 # This is for files with execute permission:
 EXEC 00;38;5;142
 
 ## Archives or compressed (violet)
-.tar    00;38;5;132
-.tgz    00;38;5;132
-.arj    00;38;5;132
-.taz    00;38;5;132
-.lzh    00;38;5;132
-.lzma   00;38;5;132
-.tlz    00;38;5;132
-.txz    00;38;5;132
-.zip    00;38;5;132
-.z      00;38;5;132
-.Z      00;38;5;132
-.dz     00;38;5;132
-.gz     00;38;5;132
-.lz     00;38;5;132
-.xz     00;38;5;132
-.bz2    00;38;5;132
-.bz     00;38;5;132
-.tbz    00;38;5;132
-.tbz2   00;38;5;132
-.tz     00;38;5;132
-.deb    00;38;5;132
-.rpm    00;38;5;132
-.jar    00;38;5;132
-.rar    00;38;5;132
-.ace    00;38;5;132
-.zoo    00;38;5;132
-.cpio   00;38;5;132
-.7z     00;38;5;132
-.rz     00;38;5;132
-.apk    00;38;5;132
-.gem    00;38;5;132
+.tar    00;38;5;175
+.tgz    00;38;5;175
+.arj    00;38;5;175
+.taz    00;38;5;175
+.lzh    00;38;5;175
+.lzma   00;38;5;175
+.tlz    00;38;5;175
+.txz    00;38;5;175
+.zip    00;38;5;175
+.z      00;38;5;175
+.Z      00;38;5;175
+.dz     00;38;5;175
+.gz     00;38;5;175
+.lz     00;38;5;175
+.xz     00;38;5;175
+.bz2    00;38;5;175
+.bz     00;38;5;175
+.tbz    00;38;5;175
+.tbz2   00;38;5;175
+.tz     00;38;5;175
+.deb    00;38;5;175
+.rpm    00;38;5;175
+.jar    00;38;5;175
+.rar    00;38;5;175
+.ace    00;38;5;175
+.zoo    00;38;5;175
+.cpio   00;38;5;175
+.7z     00;38;5;175
+.rz     00;38;5;175
+.apk    00;38;5;175
+.gem    00;38;5;175
 
 # Image formats (yellow)
 .jpg    00;38;5;214
