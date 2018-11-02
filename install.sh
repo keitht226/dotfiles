@@ -16,15 +16,12 @@ exists=false
 
 for file in "${FILES[@]}"
 do
-  path="$BASE_DIR/$file"
-  new_path="$HOME/.$file"
-  if [ -e $new_path ]; then
-    if [ $# -ne 0 ] && [ ${1} = "-f" ]; then
-      rm ~/."${file}"
-    else
-      echo "$file already exists."
-      exists=true
-    fi
+  path="${BASE_DIR}/$file"
+  new_path="${HOME}/.$file"
+  if [ $# -ne 0 ] && [ ${1} = "-f" ]; then
+    rm "${new_path}"
+  else
+    exists=true
   fi
 done
 
