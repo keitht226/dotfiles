@@ -101,18 +101,18 @@ DIR 00;38;5;109 # directory 01;34
 LINK 00;38;5;108 # symbolic link. (If you set this to 'target' instead of a
  # numerical value, the color is as for the file pointed to.)
 MULTIHARDLINK 00 # regular file with more than one link
-FIFO 48;5;214;38;5;167;01 # pipe
-SOCK 48;5;214;38;5;167;01 # socket
-DOOR 48;5;214;38;5;167;01 # door
-BLK 48;5;214;38;5;245;01 # block device driver
-CHR 48;5;214;38;5;245;01 # character device driver
+FIFO 48;5;214;38;5;234;01 # pipe
+SOCK 48;5;214;38;5;234;01 # socket
+DOOR 48;5;214;38;5;234;01 # door
+BLK 48;5;214;38;5;234;01 # block device driver
+CHR 48;5;214;38;5;234;01 # character device driver
 ORPHAN 38;5;167 # symlink to nonexistent file, or non-stat'able file
 SETUID 48;5;160;38;5;223 # file that is setuid (u+s)
-SETGID 48;5;136;38;5;223 # file that is setgid (g+s)
+SETGID 48;5;136;38;5;234 # file that is setgid (g+s)
 CAPABILITY 30;41 # file with capability
-STICKY_OTHER_WRITABLE 48;5;106;38;5;223 # dir that is sticky and other-writable (+t,o+w)
-OTHER_WRITABLE 48;5;235;38;5;109 # dir that is other-writable (o+w) and not sticky
-STICKY 48;5;66;38;5;223 # dir with the sticky bit set (+t) and not other-writable
+STICKY_OTHER_WRITABLE 48;5;106;38;5;234 # dir that is sticky and other-writable (+t,o+w)
+OTHER_WRITABLE 38;5;109 # dir that is other-writable (o+w) and not sticky
+STICKY 48;5;66;38;5;234 # dir with the sticky bit set (+t) and not other-writable
 # This is for files with execute permission:
 EXEC 00;38;5;142
 
