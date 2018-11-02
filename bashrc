@@ -81,12 +81,14 @@ BWHT="\[\033[47m\]" # background white
 
 #256 ANSI color codes
 ## gruvbox colors
-FGRUV_ORNG="\[\033[01;38;5;172m\]"
-FGRUV_CYN="\[\033[01;38;5;108m\]"
-FGRUV_BLUE="\[\033[01;38;5;73m\]"
-FGRUV_RED="\[\033[01;38;5;203m\]"
-FGRUV_WHT="\[\033[01;38;5;187m\]"
-FGRUV_GRN="\[\033[01;38;5;106m\]"
+GRUV_ORNG="\[\033[01;38;5;208m\]"
+GRUV_YLW="\[\033[01;38;5;214m\]"
+GRUV_CYN="\[\033[01;38;5;108m\]"
+GRUV_BLUE="\[\033[01;38;5;109m\]"
+GRUV_RED="\[\033[01;38;5;167m\]"
+GRUV_WHT="\[\033[01;38;5;223m\]"
+GRUV_GRN="\[\033[01;38;5;142m\]"
+GRUV_PRP="\[\033[01;38;5;175m\]"
 
 ## Molokai Colors
 MOL_ORNG="\[\033[01;38;5;208m\]"
@@ -118,14 +120,17 @@ K_GRN="\[\033[01;38;5;155m\]"
 
 
 if [ "$color_prompt" = yes ]; then
-  PS1="$HC$K_ORNG ${debian_chroot:+($debian_chroot)}\u\
-${K_CYN}: ${K_RED}\w${K_CYN}> $K_WHT"
+  PS1="$HC$GRUV_ORNG ${debian_chroot:+($debian_chroot)}\u\
+${GRUV_BLU}: ${GRUV_RED}\w${GRUV_BLU}> $GRUV_WHT"
 
-  PS2="$HC$K_GRN&gt; $RS"
+  PS2="$HC$GRUV_GRN&gt; $RS"
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
+
+# Set Grep Colors to gruvbox theme
+export GREP_COLORS='ms=01;38;5;175:mc=01;38;5;214:fn=01;38;5;109:se=01;38;5;214:ln=01;38;5;142'
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in

@@ -66,8 +66,6 @@ else
   endif
 
   let g:gruvbox_italic=0
-  "make line numbers a light grey that's easier to see
-  autocmd! ColorScheme * highlight LineNr ctermfg=grey
   
   colorscheme gruvbox
 endif

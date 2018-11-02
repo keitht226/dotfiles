@@ -7,16 +7,16 @@ mkdir ~/dotfiles && cd dotfiles
 git clone --recursive https://github.com/keitht226/dotfiles.git .
 bash install.sh
 ```
-* `bash install.sh -f` will overwrite existing dotfiles. Save them before running this command or they will be destroyed.
+* `bash install.sh -f` will overwrite existing dotfiles. Save them before running this command or they will be destroyed. (run without -f to see which files would potentially be destroyed)
 
 ## Update Plugins
 
 ```
-cd ~/dotfiles
-git submodule foreach git pull origin master
+# inside vim
+:call minpac#update()
 ```
 
-## Update everything (plugins will be up to date with my github but not necessarily up to date with latest verison of plugin)
+## Update everything
 ```
 git pull origin master 
 ```
@@ -40,19 +40,24 @@ git push
 ## General Notes
 ### Colors
 * looks best if terminal background color is changed appropriately
-* Gruvbox background color (hard contrast): #1d2021 rgb(29,32,33)
+* Gruvbox background color (hard contrast): #1d2021 rgb(29,32,33) ctermbg=234
+* Gruvbox foreground color:                 #ebdbb2 rgb(235,219,178) ctermbg=223
+* Gruvbox color palette top row: #1d2021, #cc241d, #98971a, #d79921, #458588, #b16286, #689d6a, #a89984
+* Gruvbox color palette bot row: #928374, #fb4934, #b8bb26, #fabd2f, #83a598, #d3869b, #8ec07c, #ebdbb2
 * Hybrid background colors:
       * Hard Contrast: #1D1F21
       * Soft Contrast: #232c31
-* Keith Background Color: #121212 ctermbg=233
-* Keith Foreground Color: #d0d0d0 ctermfg=252
 * Useful sites
     * 256 xterm codes misc.flogisoft.com/bash/tip_colors_and_formatting  
     * hex to xterm https://github.com/97-109-107/vim_cterm2gui2cterm/blob/master/vim_cterm2gui2cterm.py
 
-### Pathogen
-* Required for any plugins to work
-* __Vim version: 7.0 or above__
+### minpac
+* Requires vim 8.0 and above
+```
+minpac#update()
+minpac#add('path/to/git/.git')
+minpac#clean() " erases plugins without minpac#add
+```
 
 ### Fonts
 * Fonts seem to vary in appearance and name depending on where gvim is being launched from. See notes in vimrc on how to adjust fonts to you liking
