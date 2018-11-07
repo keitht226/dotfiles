@@ -20,7 +20,7 @@ hi Directory guifg=#83a598 ctermfg=108
 
 " IndentLine -----------------------------------------------------------------
 let g:indentLine_char = '¦'
-let g:indentLine_enabled = 1
+let g:indentLine_enabled = 0
 let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_leadingSpaceEnabled = 0
 
@@ -29,14 +29,14 @@ let g:indentLine_leadingSpaceEnabled = 0
 let g:airline#extensions#tabline#enabled   = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#ale#enabled       = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline_section_b = '%t%r'
+let g:airline_section_c = ''
+let g:airline_section_y = ''
 
 " CTRL P ---------------------------------------------------------------------
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+let g:ctrlp_by_filename = 1
+let g:ctrlp_cmd="CtrlP :pwd'
 
 " NERD Commenter--------------------------------------------------------------
 " Add spaces after comment delimiters by default
