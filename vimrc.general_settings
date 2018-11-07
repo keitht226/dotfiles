@@ -13,6 +13,8 @@ set cursorline                              " highlight current line
 set scrolloff=3                             " Screen automatically scrolls with curser
 set lazyredraw                              " redraw only when needed
 set timeout timeoutlen=3000 ttimeoutlen=100 " prevent lag when leaving/entering insert mode
+set backspace=indent,eol,start              "back space is more intuitive
+set confirm                                 "asks for confirmation instead of giving error
 
 " get out of vi-compatible mode and don't use local .vimrc
 set noexrc
@@ -21,16 +23,12 @@ set nocompatible
 "filetype specific indenting and syntax coloring
 filetype indent plugin on
 syntax on
+set autoindent " works in conjunction with filetype indenting
 
 "highlight search and search isn't case-sensitive unless caps
 set hlsearch
 set ignorecase
 set smartcase
-
-"back space is more intuitive
-set backspace=indent,eol,start
-set autoindent
-set confirm "asks for confirmation instead of giving error
 
 "change length of tabs
 set shiftwidth=2
@@ -53,6 +51,13 @@ set foldmethod=manual
 set pastetoggle=<F2>
 set noshowmode
 
+"place vertical bar after certain amount of characters
+if exists('+colorcolumn')
+  set colorcolumn=81
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
 "-----------------------------------------------------------------------------
 " Remaps settings 
 "-----------------------------------------------------------------------------
@@ -64,26 +69,19 @@ nnoremap <leader>o o<esc>
 nnoremap <leader>O O<esc>
 
 "double click will highlight all occurences of word in either mode
-map <2-LeftMouse> *N
-imap <2-LeftMouse> <c-o>*N
-
-"place vertical bar after certain amount of characters
-if exists('+colorcolumn')
-  set colorcolumn=80
-else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-endif
+map <2-LeftMouse> *
+imap <2-LeftMouse> <c-o>*
 
 "remap no hlsearch to space
 nnoremap <leader><space> :nohlsearch<CR>
 
 " Move lines up or down
-map <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <Esc>:m .+1<CR>==gi
-inoremap <C-k> <Esc>:m .-2<CR>==gi
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
+map <C-DOWN> :m .+1<CR>==
+nnoremap <C-UP> :m .-2<CR>==
+inoremap <C-DOWN> <Esc>:m .+1<CR>==gi
+inoremap <C-UP> <Esc>:m .-2<CR>==gi
+vnoremap <C-DOWN> :m '>+1<CR>gv=gv
+vnoremap <C-UP> :m '<-2<CR>gv=gv
 
 "move vertically by visual line instead of line number
 nnoremap j gj
@@ -91,3 +89,43 @@ nnoremap k gk
 
 " List buffers in a new window
 nnoremap <F4> :buffers<CR>:buffer<Space>
+
+" Automatically open quick fix menu after grep
+augroup grep_au
+  autocmd!
+  autocmd QuickFixCmdPost [^l]* cwindow
+  autocmd QuickFixCmdPost l* lwindow
+augroup END
+  
+"
+" Toggle quick fix and location lists
+"
+function! GetBufferList()
+  redir =>buflist
+  silent! ls!
+  redir END
+  return buflist
+endfunction
+
+function! ToggleList(bufname, pfx)
+  let buflist = GetBufferList()
+  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
+    if bufwinnr(bufnum) != -1
+      exec(a:pfx.'close')
+      return
+    endif
+  endfor
+  if a:pfx == 'l' && len(getloclist(0)) == 0
+      echohl ErrorMsg
+      echo "Location List is Empty."
+      return
+  endif
+  let winnr = winnr()
+  exec(a:pfx.'open')
+  if winnr() != winnr
+    wincmd p
+  endif
+endfunction
+
+nmap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
+nmap <silent> <leader>e :call ToggleList("Quickfix List", 'c')<CR>
