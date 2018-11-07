@@ -57,6 +57,9 @@ let g:gruvbox_invert_selection=0 " fixes visual mode highlight
 
 set background=dark
 if has('gui_running')
+  set guioptions-=T " remove toolbar
+  set guioptions-=L " remove left scroll bar
+  set guioptions-=r " remove right scroll bar
   colorscheme gruvbox
 else
   set t_Co=256
