@@ -1,2 +1,4 @@
 vim/view/*
 vim/pack/minpac/start
+*.swp
+vim/pack/minpac/opt/minpac/doc/*
