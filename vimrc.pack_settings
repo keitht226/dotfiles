@@ -1,4 +1,4 @@
-nnoremap <F3> :call minpac#update()<CR>
+nnoremap <F1> :call minpac#update()<CR>
 
 " Easy Motion ----------------------------------------------------------------
 "make it so easy motion only requires one key press of <leader>
@@ -57,7 +57,7 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
 " ALE (linter) ---------------------------------------------------------------
-nnoremap <F5> :ALEToggle<CR>
+nnoremap <F4> :ALEToggle<CR>
 " don't lint when a new file is opened
 let g:ale_lint_on_enter = 0
 " only lint when saving the file
@@ -81,12 +81,12 @@ let g:cpp_no_function_highlight = 1
 
 " mu complete ----------------------------------------------------------------
 set completeopt+=menuone
-set comleteopt=+preview " don't automatically open preview window with tags
+set completeopt-=preview " don't automatically open preview window with tags
 set completeopt+=noselect " enable auto completion
 let g:mucomplete#enable_auto_at_startup = 1
 set belloff+=ctrlg " disable bell
 set shortmess+=c   " shut off completion messages
-" let g:mucomplete#completion_delay = 1 " add delay before auto complete
+let g:mucomplete#completion_delay = 1 " add delay before auto complete
 
 " tagbar ---------------------------------------------------------------------
 nmap <F8> :TagbarToggle<CR>
@@ -103,5 +103,5 @@ hi debugBreakpoint term=reverse ctermbg=167 guibg=#fb4934
 " Simpleterm -----------------------------------------------------------------
 tnor <C-n> <C-\><C-n>
 
-" CurtineIncSw
-nmap <leader>gh :call CurtineIncSw()<CR>
+" CurtineIncSw ---------------------------------------------------------------
+nmap <F5> :call CurtineIncSw()<CR>

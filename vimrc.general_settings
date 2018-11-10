@@ -43,8 +43,8 @@ set foldmethod=manual
 " Save Folds When exit buffer
 augroup AutoSaveFolds
   autocmd!
-  autocmd BufWinLeave * mkview
-  autocmd BufWinEnter * silent loadview
+  autocmd BufWinLeave *.* mkview
+  autocmd BufWinEnter *.* silent loadview
 augroup END
 
 " toggle set paste (prevents auto indent when pasting from clip-board
@@ -90,6 +90,17 @@ augroup end
 "-----------------------------------------------------------------------------
 " Remaps settings 
 "-----------------------------------------------------------------------------
+" F-key summary
+" F1: update plugins
+" F2: Toggle Paste mode
+" F3: Open buffer list
+" F4: ALE
+" F5: Jump to header / src
+" F6: Jump to previous buffer
+" F7: Jump to definition
+" F8: Toggle tagbar
+" F9: Generate Tags in working directory
+"
 "shorcut for replacing word under cursor with yanked word without overwriting yank buffer
 nnoremap <leader>p ciw<C-r>0<ESC>
 
@@ -117,7 +128,14 @@ nnoremap j gj
 nnoremap k gk
 
 " List buffers in a new window
-nnoremap <F4> :buffers<CR>:buffer<Space>
+nnoremap <F3> :buffers<CR>:buffer<Space>
+
+" jump to previous buffer
+nmap <F6> <C-^>
+" jump to definition (must have ctags)
+nmap <F7> <C-]>
+" generate ctags in working directory
+nmap <F9> :!ctags -R .<CR>
 
 " C/C++ function header block
 map <C-f> :set formatoptions-=cro<CR>o// --------------------------------------------------------------------------------<ESC>080ld$o//<CR>// Routine: <CR>//<CR>// Purpose: <CR>//<CR>// Notes: <CR>//<CR>//--------------------------------------------------------------------------------<ESC>080ld$06k:set formatoptions+=cro<CR>
