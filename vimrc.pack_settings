@@ -87,3 +87,14 @@ nmap <F8> :TagbarToggle<CR>
 " easy align -----------------------------------------------------------------
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+
+" Termdebug ------------------------------------------------------------------
+let g:termdebug_wide = 1
+hi debugPC term=reverse ctermbg=66 guibg=#458588
+hi debugBreakpoint term=reverse ctermbg=167 guibg=#fb4934
+
+" Simpleterm -----------------------------------------------------------------
+tnor <C-n> <C-\><C-n>
+
+" CurtineIncSw
+nmap <leader>gh :call CurtineIncSw()<CR>

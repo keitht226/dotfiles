@@ -4,6 +4,7 @@ let mapleader=","
 "set packpath^=~/.vim
 " try to load minpac. Use :call minpac#update() to update or install plugins
 packadd minpac
+packadd termdebug
 if exists('*minpac#init')
   call minpac#init()
   " minpac must have {'type': 'opt'} so that it can be laoded with packadd
@@ -23,13 +24,18 @@ if exists('*minpac#init')
   call minpac#add('https://github.com/tpope/vim-surround.git')
   call minpac#add('https://github.com/tpope/vim-fugitive.git')
   call minpac#add('https://github.com/plasticboy/vim-markdown.git')
-  call minpac#add('https://github.com/lifepillar/vim-mucomplete.git')
   call minpac#add('https://github.com/majutsushi/tagbar.git')
   call minpac#add('https://github.com/junegunn/fzf.git')
   call minpac#add('https://github.com/junegunn/fzf.vim.git')
   call minpac#add('https://github.com/jiangmiao/auto-pairs.git')
   call minpac#add('https://github.com/junegunn/vim-easy-align.git')
   call minpac#add('https://github.com/morhetz/gruvbox.git')
+  call minpac#add('https://github.com/gu-fan/simpleterm.vim.git')
+  call minpac#add('https://github.com/xolox/vim-easytags.git')
+  call minpac#add('https://github.com/ericcurtin/CurtineIncSw.vim.git')
+  call minpac#add('https://github.com/xolox/vim-misc.git')
+  " call minpac#add('https://github.com/lifepillar/vim-mucomplete.git')
+  call minpac#add('https://github.com/prabirshrestha/asyncomplete.vim.git')
 
   "-----------------------------------------------------------------------------
   " plugin settings 
