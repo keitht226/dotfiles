@@ -41,11 +41,11 @@ set smarttab
 "Folding
 set foldmethod=manual
 " Save Folds When exit buffer
-" augroup AutoSaveFolds
-  " autocmd!
-  " autocmd BufWinLeave * mkview
-  " autocmd BufWinEnter * silent loadview
-" augroup END
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent loadview
+augroup END
 
 " toggle set paste (prevents auto indent when pasting from clip-board
 set pastetoggle=<F2>
@@ -57,6 +57,35 @@ if exists('+colorcolumn')
 else
   au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
+
+" vimgrep configuration------------------------------------------------------
+function! GrepFileType(item, ...)
+  let file_types = ""
+  for arg in a:000
+    let file_types = file_types . "**/*" . arg . " "
+  endfor
+  execute "noatuocmd vimgrep /" . a:item . "/j " . file_types | copen
+endfunction
+
+" Calls above function. Requires at least 2 args. First arg is the word
+" to grep for. Spaces cannot be included! The following arguments
+" are file types to search.
+" ex: :Mygrep thing_to_find .hpp .cpp
+command! -nargs=+ Mygrep :call GrepFileType(<f-args>)
+
+" automatically open quick fix menu after grep
+augroup grep_au
+  autocmd!
+  autocmd QuickFixCmdPost [^l]* cwindow
+  autocmd QuickFixCmdPost l* lwindow
+augroup END
+
+" Quick fix menu will always go horizontally across the bottom of all
+" windows rather than just the current window
+augroup qf_window_down
+  autocmd!
+  autocmd FileType qf wincmd J
+augroup end
 
 "-----------------------------------------------------------------------------
 " Remaps settings 
@@ -90,13 +119,10 @@ nnoremap k gk
 " List buffers in a new window
 nnoremap <F4> :buffers<CR>:buffer<Space>
 
-" Automatically open quick fix menu after grep
-augroup grep_au
-  autocmd!
-  autocmd QuickFixCmdPost [^l]* cwindow
-  autocmd QuickFixCmdPost l* lwindow
-augroup END
-  
+" C/C++ function header block
+map <C-f> :set formatoptions-=cro<CR>o// --------------------------------------------------------------------------------<ESC>080ld$o//<CR>// Routine: <CR>//<CR>// Purpose: <CR>//<CR>// Notes: <CR>//<CR>//--------------------------------------------------------------------------------<ESC>080ld$06k:set formatoptions+=cro<CR>
+imap <C-f> :set formatoptions-=cro<CR>// --------------------------------------------------------------------------------<ESC>080ld$o//<CR>// Routine: <CR>//<CR>// Purpose: <CR>//<CR>// Notes: <CR>//<CR>//--------------------------------------------------------------------------------<ESC>080ld$06k:set formatoptions+=cro<CR>
+
 "
 " Toggle quick fix and location lists
 "

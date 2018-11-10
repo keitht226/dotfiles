@@ -29,6 +29,12 @@ let g:airline_section_c = ''
 let g:airline_section_y = ''
 
 " CTRL P ---------------------------------------------------------------------
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 let g:ctrlp_by_filename = 1
 let g:ctrlp_cmd="CtrlP :pwd"
 
@@ -75,6 +81,7 @@ let g:cpp_no_function_highlight = 1
 
 " mu complete ----------------------------------------------------------------
 set completeopt+=menuone
+set comleteopt=+preview " don't automatically open preview window with tags
 set completeopt+=noselect " enable auto completion
 let g:mucomplete#enable_auto_at_startup = 1
 set belloff+=ctrlg " disable bell

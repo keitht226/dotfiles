@@ -47,11 +47,6 @@ endif
 "-----------------------------------------------------------------------------
 " color settings 
 "-----------------------------------------------------------------------------
-" set gvim default window size
-if has("gui_running")
-  set lines=30 columns=90
-endif
-
 syntax enable
 
 "gruvbox settings --------------------------------------------------------------
@@ -64,6 +59,8 @@ if has('gui_running')
   set guioptions-=T " remove toolbar
   set guioptions-=L " remove left scroll bar
   set guioptions-=r " remove right scroll bar
+  "set guifont=InputMono:h12:cANSI
+  set guifont=Input\ Mono\ 12
   colorscheme gruvbox
 else
   set t_Co=256
@@ -75,11 +72,6 @@ else
   let g:gruvbox_italic=0
   
   colorscheme gruvbox
-endif
-
-if has('gui_running')
-  "set guifont=InputMono:h12:cANSI
-  set guifont=Input\ Mono\ 12
 endif
 
 "-----------------------------------------------------------------------------
