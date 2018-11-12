@@ -137,6 +137,9 @@ nmap <F7> <C-]>
 " generate ctags in working directory
 nmap <F9> :!ctags -R .<CR>
 
+" Search and replace word under cursor
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
+
 " C/C++ function header block
 map <C-f> :set formatoptions-=cro<CR>o// --------------------------------------------------------------------------------<ESC>080ld$o//<CR>// Routine: <CR>//<CR>// Purpose: <CR>//<CR>// Notes: <CR>//<CR>//--------------------------------------------------------------------------------<ESC>080ld$06k:set formatoptions+=cro<CR>
 imap <C-f> :set formatoptions-=cro<CR>// --------------------------------------------------------------------------------<ESC>080ld$o//<CR>// Routine: <CR>//<CR>// Purpose: <CR>//<CR>// Notes: <CR>//<CR>//--------------------------------------------------------------------------------<ESC>080ld$06k:set formatoptions+=cro<CR>
