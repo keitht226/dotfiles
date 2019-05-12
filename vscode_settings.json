@@ -1,0 +1,75 @@
+/*
+Preffered extensions:
+    -C/C++
+    -Excel Viewer
+    -Git History
+    -GitLens
+    -MagicPython
+    -Markdown ALl in One
+    -markdownlint
+    -Path Intellisense
+    -Project Manager
+    -Project Manager
+    -Python
+    -Visual Studio Intellicode
+*/
+
+{
+    // General Settings
+    "files.autoSave": "afterDelay",
+    "explorer.confirmDragAndDrop": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.startupEditor": "newUntitledFile",
+    "explorer.confirmDelete": false,
+    "editor.minimap.enabled": false,
+    "editor.tabCompletion": "on",
+    "editor.acceptSuggestionOnEnter": "off",
+    
+    // Python Settings
+    "python.jediEnabled": false,
+    "[python]": {
+        "editor.tabSize": 4
+    },
+    
+    // Git settings
+    "git.confirmSync": false,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    
+    // Markdown settings
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": false,
+        "editor.tabSize": 2
+    },
+    "markdown.extension.toc.githubCompatibility": true,
+
+    // Path intellisense settings
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true
+    },
+    "path-intellisense.showHiddenFiles": true,
+    "path-intellisense.autoSlashAfterDirectory": true,
+    "path-intellisense.absolutePathToWorkspace": true,
+}
+
+{
+    // Anaconda Settings (recommend to be placed in workspace settings)
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
+    "python.dataScience.changeDirOnImportExport": false,
+    // Launch windows cmd.exe with conda args or else conda environments
+    // won't initialize properly
+    "terminal.integrated.shellArgs.windows": [
+        "/K",
+        "C:\\Users\\keith\\my_documents\\Anaconda3\\Scripts\\activate.bat",
+        "C:\\Users\\keith\\my_documents\\Anaconda3"
+    ],
+    "python.formatting.provider": "yapf",
+}
