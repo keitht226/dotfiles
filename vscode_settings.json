@@ -25,6 +25,11 @@ Preffered extensions:
     "editor.minimap.enabled": false,
     "editor.tabCompletion": "on",
     "editor.acceptSuggestionOnEnter": "off",
+    "editor.tokenColorCustomizations": {
+        "[Default Dark+]": {
+            "comments": "#808080"
+        }
+    },
     
     // Python Settings
     "python.jediEnabled": false,
