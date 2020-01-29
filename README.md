@@ -44,9 +44,8 @@ git push
 * Gruvbox foreground color:                 #ebdbb2 rgb(235,219,178) ctermbg=223
 * Gruvbox color palette top row: #1d2021, #cc241d, #98971a, #d79921, #458588, #b16286, #689d6a, #a89984
 * Gruvbox color palette bot row: #928374, #fb4934, #b8bb26, #fabd2f, #83a598, #d3869b, #8ec07c, #ebdbb2
-* Hybrid background colors:
-      * Hard Contrast: #1D1F21
-      * Soft Contrast: #232c31
+* VSCode Colors:
+![VSCode Color Palette](https://github.com/keitht226/assets/blob/master/vscode_colors.png)
 * Useful sites
     * 256 xterm codes misc.flogisoft.com/bash/tip_colors_and_formatting  
     * hex to xterm https://github.com/97-109-107/vim_cterm2gui2cterm/blob/master/vim_cterm2gui2cterm.py
