@@ -84,44 +84,26 @@ BWHT="\[\033[47m\]" # background white
 GRUV_ORNG="\[\033[01;38;5;208m\]"
 GRUV_YLW="\[\033[01;38;5;214m\]"
 GRUV_CYN="\[\033[01;38;5;108m\]"
-GRUV_BLUE="\[\033[01;38;5;109m\]"
+GRUV_BLU="\[\033[01;38;5;109m\]"
 GRUV_RED="\[\033[01;38;5;167m\]"
 GRUV_WHT="\[\033[01;38;5;223m\]"
 GRUV_GRN="\[\033[01;38;5;142m\]"
 GRUV_PRP="\[\033[01;38;5;175m\]"
 
-## Molokai Colors
-MOL_ORNG="\[\033[01;38;5;208m\]"
-MOL_CORAL="\[\033[01;38;5;222m\]"
-MOL_CYN="\[\033[01;38;5;81m\]"
-MOL_PURP="\[\033[01;38;5;141m\]"
-MOL_RED="\[\033[01;38;5;197m\]"
-MOL_WHT="\[\033[01;38;5;252m\]"
-MOL_GRN="\[\033[01;38;5;154m\]"
-
-## Hybrid Colors
-HYB_ORNG="\[\033[01;38;5;173m\]"
-HYB_YELL="\[\033[01;38;5;221m\]"
-HYB_CYN="\[\033[01;38;5;109m\]"
-HYB_BLUE="\[\033[01;38;5;110m\]"
-HYB_PURP="\[\033[01;38;5;139m\]"
-HYB_RED="\[\033[01;38;5;167m\]"
-HYB_WHT="\[\033[01;38;5;250m\]"
-HYB_GRN="\[\033[01;38;5;143m\]"
-
-## Keith Colors
-K_ORNG="\[\033[01;38;5;208m\]"
-K_CORAL="\[\033[01;38;5;222m\]"
-K_CYN="\[\033[01;38;5;81m\]"
-K_PURP="\[\033[01;38;5;141m\]"
-K_RED="\[\033[01;38;5;203m\]"
-K_WHT="\[\033[01;38;5;252m\]"
-K_GRN="\[\033[01;38;5;155m\]"
+## VS Code Colors
+CODE_ORNG="\[\033[01;38;5;173m\]"
+CODE_YLW="\[\033[01;38;5;187m\]"
+CODE_CYN="\[\033[01;38;5;117m\]"
+CODE_BLU="\[\033[01;38;5;75m\]"
+CODE_RED="\[\033[01;38;5;203m\]"
+CODE_WHT="\[\033[01;38;5;188m\]"
+CODE_GRN="\[\033[01;38;5;65m\]"
+CODE_PRP="\[\033[01;38;5;60m\]"
 
 
 if [ "$color_prompt" = yes ]; then
-  PS1="$HC$GRUV_ORNG ${debian_chroot:+($debian_chroot)}\u\
-${GRUV_BLU}: ${GRUV_RED}\w${GRUV_BLU}> $GRUV_WHT"
+  PS1="$HC$CODE_ORNG ${debian_chroot:+($debian_chroot)}\u\
+${CODE_CYN}: ${CODE_RED}\w${CODE_CYN}> $CODE_WHT"
 
   PS2="$HC$GRUV_GRN&gt; $RS"
 else

@@ -1,6 +1,6 @@
 [user]
   name = Keith Joseph Thompson
-  email = keitht226@live.com
+  email = 
 [core]
   editor = vim
   whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol

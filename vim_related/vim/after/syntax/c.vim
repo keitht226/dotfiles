@@ -35,6 +35,19 @@ if exists('g:cpp_member_variable_highlight') && g:cpp_member_variable_highlight
 endif
 
 " -----------------------------------------------------------------------------
+"  Highlight POSIX functions.
+" -----------------------------------------------------------------------------
+if exists('g:cpp_posix_standard') && g:cpp_posix_standard
+	syn keyword cPOSIXFunction 	socket accept bind connect getsockname
+	syn keyword cPOSIXFunction 	listen recv recvfrom recvmsg
+	syn keyword cPOSIXFunction 	send sendto sendmsg setsockopt socketpair
+	syn keyword cPOSIXFunction 	htonl htons ntohl ntohs
+	syn keyword cPOSIXFunction 	inet_ntop inet_pton getaddrinfo
+	syn keyword cPOSIXFunction 	poll select pselect
+	hi def link cPOSIXFunction Function
+endif
+
+" -----------------------------------------------------------------------------
 "  Source: aftersyntaxc.vim
 " -----------------------------------------------------------------------------
 
@@ -274,31 +287,31 @@ hi def link cBoolean Boolean
 " -----------------------------------------------------------------------------
 
 " Operators
-syn match cOperator	"\(<<\|>>\|[-+*/%&^|<>!=]\)="
-syn match cOperator	"<<\|>>\|&&\|||\|++\|--\|->"
-syn match cOperator	"[.!~*&%<>^|=,+-]"
-syn match cOperator	"/[^/*=]"me=e-1
-syn match cOperator	"/$"
-syn match cOperator "&&\|||"
-syn match cOperator	"[][]"
-
+"syn match cOperator	"\(<<\|>>\|[-+*/%&^|<>!=]\)="
+"syn match cOperator	"<<\|>>\|&&\|||\|++\|--\|->"
+"syn match cOperator	"[.!~*&%<>^|=,+-]"
+"syn match cOperator	"/[^/*=]"me=e-1
+"syn match cOperator	"/$"
+"syn match cOperator "&&\|||"
+"syn match cOperator	"[][]"
+"
 "" Preprocs
-syn keyword cDefined defined contained containedin=cDefine
-hi def link cDefined cDefine
+"syn keyword cDefined defined contained containedin=cDefine
+"hi def link cDefined cDefine
 
 "" Functions
-syn match cUserFunction "\<\h\w*\>\(\s\|\n\)*("me=e-1 contains=cType,cDelimiter,cDefine
-syn match cUserFunctionPointer "(\s*\*\s*\h\w*\s*)\(\s\|\n\)*(" contains=cDelimiter,cOperator
+"syn match cUserFunction "\<\h\w*\>\(\s\|\n\)*("me=e-1 contains=cType,cDelimiter,cDefine
+"syn match cUserFunctionPointer "(\s*\*\s*\h\w*\s*)\(\s\|\n\)*(" contains=cDelimiter,cOperator
 "
 "hi def link cUserFunction cFunction
 "hi def link cUserFunctionPointer cFunction
 "
 "" Delimiters
-syn match cDelimiter    "[();\\:]"
+"syn match cDelimiter    "[();\\]"
 "" foldmethod=syntax fix, courtesy of Ivan Freitas
-syn match cBraces display "[{}]"
+"syn match cBraces display "[{}]"
 
 " Links
-hi def link cDelimiter Delimiter
+"hi def link cDelimiter Delimiter
 " foldmethod=syntax fix, courtesy of Ivan Freitas
-hi def link cBraces Delimiter
+"hi def link cBraces Delimiter

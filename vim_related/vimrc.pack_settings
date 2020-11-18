@@ -1,9 +1,3 @@
-nnoremap <F1> :call minpac#update()<CR>
-
-" Easy Motion ----------------------------------------------------------------
-"make it so easy motion only requires one key press of <leader>
-map <leader> <plug>(easymotion-prefix)
-
 " NERD Tree ------------------------------------------------------------------
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 "open nerdtree in the pwd
@@ -73,21 +67,6 @@ let g:ale_list_window_size = 10
 " Colors the mark the same as the git gutter symbol it replaces
 let g:SignatureMarkTextHLDynamic = 1
 
-" Vim Markdown ---------------------------------------------------------------
-let g:vim_markdown_folding_disabled = 1
-
-" CPP Enhanced ---------------------------------------------------------------
-let g:cpp_no_function_highlight = 1
-
-" mu complete ----------------------------------------------------------------
-set completeopt+=menuone
-set completeopt-=preview " don't automatically open preview window with tags
-set completeopt+=noselect " enable auto completion
-let g:mucomplete#enable_auto_at_startup = 1
-set belloff+=ctrlg " disable bell
-set shortmess+=c   " shut off completion messages
-let g:mucomplete#completion_delay = 1 " add delay before auto complete
-
 " tagbar ---------------------------------------------------------------------
 nmap <F8> :TagbarToggle<CR>
 
@@ -95,13 +74,3 @@ nmap <F8> :TagbarToggle<CR>
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-" Termdebug ------------------------------------------------------------------
-let g:termdebug_wide = 1
-hi debugPC term=reverse ctermbg=66 guibg=#458588
-hi debugBreakpoint term=reverse ctermbg=167 guibg=#fb4934
-
-" Simpleterm -----------------------------------------------------------------
-tnor <C-n> <C-\><C-n>
-
-" CurtineIncSw ---------------------------------------------------------------
-nmap <F5> :call CurtineIncSw()<CR>

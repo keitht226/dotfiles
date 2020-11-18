@@ -1,0 +1,38 @@
+"remap leader to ','
+let mapleader=","
+
+"-----------------------------------------------------------------------------
+" color settings 
+"-----------------------------------------------------------------------------
+syntax enable
+
+"gruvbox settings --------------------------------------------------------------
+let g:gruvbox_contrast_dark='hard' " light, medium, hard
+let g:gruvbox_contrast_light='hard'
+let g:gruvbox_invert_selection=0 " fixes visual mode highlight
+
+set background=dark
+if has('gui_running')
+  set guioptions-=T " remove toolbar
+  set guioptions-=L " remove left scroll bar
+  set guioptions-=r " remove right scroll bar
+  "set guifont=InputMono:h12:cANSI
+  set guifont=Input\ Mono\ 12
+  colorscheme gruvbox
+else
+  set t_Co=256
+  " prevents background from changing on low color terminals
+  if &term =~ '256color'
+    set t_ut=
+  endif
+
+  let g:gruvbox_italic=0
+  
+  colorscheme gruvbox
+endif
+
+"-----------------------------------------------------------------------------
+" General settings 
+"-----------------------------------------------------------------------------
+source ~/.vimrc.general_settings
+source ~/.vimrc.pack_settings
